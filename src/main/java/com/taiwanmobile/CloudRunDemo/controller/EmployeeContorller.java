@@ -3,6 +3,9 @@ package com.taiwanmobile.CloudRunDemo.controller;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.apache.commons.collections4.comparators.FixedOrderComparator;
@@ -47,7 +50,11 @@ public class EmployeeContorller {
 	public String exportEmployeesToGCS() {
 		List<EmployeeModel> employees = employeeService.findAll();
 		
-		String objectName = "employees/employees-" + LocalDateTime.now().toString() + ".csv";
+		LocalDateTime now = LocalDateTime.now();
+		DateTimeFormatter DTF = DateTimeFormatter.ofPattern("yyyy-MM-ddTHH:mm:ss");
+        ZonedDateTime zonedDateTime = ZonedDateTime.of(now, ZoneId.of("Asia/Taipei"));
+		
+		String objectName = "employees/employees-" + zonedDateTime.format(DTF).toString()  + ".csv";
 		StringBuilder sb = new StringBuilder(1024);
 
 		try {
