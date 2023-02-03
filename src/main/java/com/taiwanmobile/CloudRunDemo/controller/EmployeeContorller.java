@@ -45,13 +45,12 @@ public class EmployeeContorller {
 		return employeeService.findAll();
 	}
 	
-	
 	@GetMapping(value = "/uploadGCS")
 	public String exportEmployeesToGCS() {
 		List<EmployeeModel> employees = employeeService.findAll();
 		
 		LocalDateTime now = LocalDateTime.now();
-		DateTimeFormatter DTF = DateTimeFormatter.ofPattern("yyyy-MM-ddTHH:mm:ss");
+		DateTimeFormatter DTF = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
         ZonedDateTime zonedDateTime = ZonedDateTime.of(now, ZoneId.of("Asia/Taipei"));
 		
 		String objectName = "employees/employees-" + zonedDateTime.format(DTF).toString()  + ".csv";
