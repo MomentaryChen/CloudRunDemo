@@ -1,4 +1,4 @@
-package com.taiwanmobile.CloudRunDemo.config;
+package com.demo.CloudRunDemo.config;
 
 import org.springframework.context.annotation.Configuration;
 

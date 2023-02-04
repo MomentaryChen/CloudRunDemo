@@ -1,4 +1,4 @@
-package com.taiwanmobile.CloudRunDemo.service.impl;
+package com.demo.CloudRunDemo.service.impl;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-import com.taiwanmobile.CloudRunDemo.service.CloudStorageService;
+import com.demo.CloudRunDemo.service.CloudStorageService;
 
 import java.nio.channels.Channels;
 import java.nio.charset.StandardCharsets;

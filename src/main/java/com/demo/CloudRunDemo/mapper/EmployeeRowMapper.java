@@ -1,11 +1,11 @@
-package com.taiwanmobile.CloudRunDemo.mapper;
+package com.demo.CloudRunDemo.mapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.taiwanmobile.CloudRunDemo.model.EmployeeModel;
+import com.demo.CloudRunDemo.model.EmployeeModel;
 
 public class EmployeeRowMapper implements RowMapper<EmployeeModel> {
 
