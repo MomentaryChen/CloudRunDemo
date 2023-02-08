@@ -17,7 +17,7 @@ WORKDIR /usr/src/app
 
 # no re-download
 
-# RUN mvn dependency:go-offline
+VOLUME /home/a0909210396/.m2/repository /home/a0909210396/.m2/repository
 RUN mvn clean package -Dmaven.repo.local=./.m2 -DskipTests
 
 
