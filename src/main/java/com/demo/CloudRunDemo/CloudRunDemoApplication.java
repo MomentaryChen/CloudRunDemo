@@ -22,7 +22,7 @@ public class CloudRunDemoApplication {
 	@Autowired
 	EmployeeService service;
 
-	@PostConstruct
+//	@PostConstruct
 	public void batch() {
 		logger.info("start the batch");
 		try {
@@ -37,6 +37,6 @@ public class CloudRunDemoApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext ctx = SpringApplication.run(CloudRunDemoApplication.class, args);
-		ctx.close();
+//		ctx.close();
 	}
 }
