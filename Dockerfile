@@ -17,13 +17,15 @@ WORKDIR /usr/src/app
 
 # no re-download
 
-# RUN mvn dependency:go-offline
-RUN  mvn clean package -Dmaven.repo.local=./.m2 -DskipTests
+RUN mvn dependency:go-offline
+RUN mvn clean package -DskipTests
 
 
 FROM openjdk:8-jdk-alpine
 
 COPY --from=builder /usr/src/app/target/CloudRunDemo-0.0.1-SNAPSHOT.jar /app/CloudRunDemo.jar
+COPY ~/.postgresql/client-cert.pem ~/.postgresql/client-key.pk8 /usr/.postgresql/
+
 EXPOSE 8080
 
 CMD ["java", "-jar", "/app/CloudRunDemo.jar"]
