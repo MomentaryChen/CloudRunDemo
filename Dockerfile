@@ -18,7 +18,7 @@ WORKDIR /usr/src/app
 # no re-download
 
 VOLUME /home/a0909210396/.m2/repository /home/a0909210396/.m2/repository
-RUN mvn clean package -Dmaven.repo.local=./.m2 -DskipTests
+RUN mvn clean package -DskipTests
 
 
 FROM openjdk:8-jdk-alpine
