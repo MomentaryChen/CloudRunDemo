@@ -14,6 +14,11 @@ RUN echo \
     > /usr/share/maven/conf/settings.xml;
 
 WORKDIR /usr/src/app
+
+# no re-download
+
+# RUN mvn dependency:go-offline
+RUN  mvn install -Dmaven.repo.local=./.m2
 RUN  mvn clean package -DskipTests
 
 
