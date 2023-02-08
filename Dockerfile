@@ -21,7 +21,7 @@ RUN mvn clean package -Dmaven.repo.local=~/.m2 -DskipTests
 
 FROM openjdk:8-jdk-alpine
 
-COPY /home/a0909210396/.postgresql /usr/.postgresql/
+COPY postgresql-key /usr/.postgresql/
 RUN ls /usr/.postgresql/
 COPY --from=builder /usr/src/app/target/CloudRunDemo-0.0.1-SNAPSHOT.jar /app/CloudRunDemo.jar
 
