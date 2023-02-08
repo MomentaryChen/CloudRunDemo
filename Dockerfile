@@ -18,8 +18,7 @@ WORKDIR /usr/src/app
 # no re-download
 
 # RUN mvn dependency:go-offline
-RUN  mvn install -Dmaven.repo.local=./.m2 -DskipTests
-RUN  mvn clean package -DskipTests
+RUN  mvn clean package -Dmaven.repo.local=./.m2 -DskipTests
 
 
 FROM openjdk:8-jdk-alpine
